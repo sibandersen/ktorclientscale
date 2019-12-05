@@ -46,7 +46,7 @@ After the test shut down the docker containers:
 
 ## Results
 
-These are the summary results from running the load tests several times each on my local machine.
+These are the summary results from running the load tests several times each on my local machine with 1000 Locust users.
 
 - Singleton with CIO engine: ~600rps, 100ms median response time
 - Singleton with Apache engine: ~500rps, 400ms median response time (with some timeout errors)
