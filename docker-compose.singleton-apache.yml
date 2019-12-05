@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+
+  ktor-singleton-apache:
+    build:
+      dockerfile: Dockerfile
+      context: ./ktorSingletonApache/
+    ports:
+      - "8080:8080"
+    environment:
+      - REMOTE_CLIENT_URL=http://nginx:80
+    depends_on:
+      - nginx
+      
+  locust:
+    environment:
+      - TARGET_URL=http://ktor-singleton-apache:8080
+    depends_on:
+      - ktor-singleton-apache

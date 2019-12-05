@@ -1,0 +1,3 @@
+FROM locustio/locust 
+
+COPY locustfile.py locustfile.py
